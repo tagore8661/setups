@@ -1,0 +1,19 @@
+{
+  "name": "docker-installation-docs",
+  "version": "1.0.0",
+  "description": "Docker installation documentation and guides",
+  "main": "index.js",
+  "scripts": {
+    "build": "mkdir -p dist && cp *.md dist/ && cp -r prometheus dist/ 2>/dev/null || true",
+    "dev": "python3 -m http.server 8000",
+    "start": "python3 -m http.server 8000"
+  },
+  "keywords": [
+    "docker",
+    "installation",
+    "documentation",
+    "devops"
+  ],
+  "author": "",
+  "license": "MIT"
+}
