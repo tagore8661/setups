@@ -38,3 +38,14 @@ sudo xfs_growfs /var
 ```
 lsblk
 ```
+
+## OR
+
+```
+lsblk
+sudo apt install cloud-guest-utils # Optional
+sudo growpart /dev/xvda 1
+sudo resize2fs /dev/xvda1
+df -h
+```
+```
