@@ -116,7 +116,7 @@ Description=Node Exporter
 [Service]
 User=node_exporter
 Group=node_exporter
-ExecStart=/opt/node_exporter/node_exporter
+ExecStart=/opt/node_exporter/node_exporter --web.listen-address=<Server-2-IP>:9100
 
 [Install]
 WantedBy=multi-user.target
@@ -140,7 +140,8 @@ netstat -lntp  # Shows Port-9100
 ### Configure Firewall
 
 ```bash
-sudo firewall-cmd --add-port=9100/tcp --permanent
+sudo firewall-cmd --permanent --add-rich-rule='rule family="ipv4" source address="<Server-1-IP>" port port="9100" protocol="tcp" accept'
+sudo firewall-cmd --permanent --remove-port=9100/tcp
 sudo firewall-cmd --reload
 sudo firewall-cmd --list-ports
 ```
